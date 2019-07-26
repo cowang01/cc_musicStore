@@ -58,6 +58,11 @@ public class GuitarTest {
     }
 
     @Test
+    public void canGetMarkup() {
+        assertEquals(42.0, guitar.calculateMarkup(), 0.1);
+    }
+
+    @Test
     public void canReturnSalePrice() {
         assertEquals(182, guitar.sellPrice(), 0.1);
     }
