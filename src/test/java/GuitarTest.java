@@ -1,6 +1,6 @@
 import org.junit.Before;
 import org.junit.Test;
-import stockList.Guitar;
+import stockList.instruments.Guitar;
 import stockMods.InstrumentGroup;
 
 import static org.junit.Assert.assertEquals;
@@ -11,7 +11,7 @@ public class GuitarTest {
 
     @Before
     public void setup(){
-        guitar = new Guitar("guitar", "CodeClan", "G13", 23, 140.00, InstrumentGroup.string);
+        guitar = new Guitar("Electric", 6, "CodeClan", "G13", 23, 140.00, InstrumentGroup.string);
 
     }
 
@@ -19,7 +19,7 @@ public class GuitarTest {
 
     @Test
     public void canhaveType(){
-        assertEquals("guitar", guitar.getType());
+        assertEquals("Electric", guitar.getType());
     }
 
     @Test
@@ -40,6 +40,11 @@ public class GuitarTest {
     @Test
     public void canHaveCost() {
         assertEquals(140.00, guitar.getCost(), 0.1);
+    }
+
+    @Test
+    public void canCountNumberOFStrings() {
+        assertEquals(6, guitar.getNumberOfStrings());
     }
 
     @Test
